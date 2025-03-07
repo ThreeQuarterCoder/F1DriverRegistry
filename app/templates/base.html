@@ -1,0 +1,26 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>F1 Registry</title>
+    <!-- Include Bootstrap CSS (CDN) for a quick, elegant look -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- Include your firebase-login.js in the <head> or <body> -->
+    <script src="/firebase-login.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">F1 Registry</a>
+      <!-- Additional nav items, login status, etc. -->
+    </nav>
+
+    <div class="container mt-4">
+      <!-- Jinja block for page-specific content -->
+      {% block content %}{% endblock %}
+    </div>
+
+    <!-- Optional Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
