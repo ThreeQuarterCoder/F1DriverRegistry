@@ -1,7 +1,7 @@
 # team_controller.py
 from fastapi import APIRouter, HTTPException, Depends, Query
 from typing import Any, List
-from team_service import TeamService
+from services.team_service import TeamService
 
 team_router = APIRouter(prefix="/teams", tags=["teams"])
 
