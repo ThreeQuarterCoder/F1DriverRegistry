@@ -1,7 +1,7 @@
 import fireo
 from fireo.models import Model
 from fireo.fields import TextField, NumberField, ReferenceField
-from models.team import Team
+from team import Team
 
 class Driver(Model):
     name = TextField()

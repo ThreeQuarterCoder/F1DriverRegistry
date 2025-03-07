@@ -1,4 +1,4 @@
-<script type="module">
+
   // Import Firebase modules correctly
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
@@ -8,7 +8,7 @@
     apiKey: "AIzaSyD1f3xPSu8nDWaPO-6r29MrDGo7e_tIfVU",
     authDomain: "f1-driver-registry.firebaseapp.com",
     projectId: "f1-driver-registry",
-    storageBucket: "f1-driver-registry.firebasestorage.app",
+    storageBucket: "f1-driver-registry.appspot.com",
     messagingSenderId: "425340909294",
     appId: "1:425340909294:web:612a49c0471636a2ef65ff"
   };
@@ -59,4 +59,4 @@
   // Attach functions to global scope for button click events
   window.signInUser = signInUser;
   window.signOutUser = signOutUser;
-</script>
+
