@@ -2,8 +2,8 @@ import fireo
 from fastapi import FastAPI
 
 # Import the routers from controllers
-from controllers.driver_controller import driver_router
-from controllers.team_controller import team_router
+from app.controllers.driver_controller import driver_router
+from app.controllers.team_controller import team_router
 
 # Initialize FireO here OR in models.py
 fireo.connection(from_file="serviceAccount.json")
