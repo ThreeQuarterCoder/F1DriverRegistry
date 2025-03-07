@@ -1,9 +1,13 @@
 import fireo
+import multiprocessing
+import uvicorn
+from nicegui import ui
 from fastapi import FastAPI, Request, Response
 
 # Import the routers from controllers
 from app.controllers.driver_controller import driver_router
 from app.controllers.team_controller import team_router
+from app.controllers.view_controller import register_view_routes
 
 # Initialize FireO here OR in models.py
 fireo.connection(from_file="f1-driver-registry-b91545d3ebfc.json")
@@ -25,3 +29,26 @@ app.include_router(team_router)
 @app.get("/")
 def read_root(request: Request):
     return {"message": "Welcome to F1 Driver Registry API"}
+
+register_view_routes()
+
+def run_uvicorn():
+    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="debug")
+
+
+def run_nicegui():
+    ui.run(title="F1 Registry", host="127.0.0.1", port=8001)
+
+def run_parallel():
+    app_process = multiprocessing.Process(target=run_uvicorn)
+    ui_process = multiprocessing.Process(target=run_nicegui)
+
+    app_process.start()
+    ui_process.start()
+
+    app_process.join()
+    ui_process.join()
+
+
+if __name__ == "__main__":
+    run_parallel()
