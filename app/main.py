@@ -1,7 +1,5 @@
 import fireo
 from fastapi import FastAPI, Request, Response
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
 
 # Import the routers from controllers
 from app.controllers.driver_controller import driver_router
@@ -20,12 +18,10 @@ app = FastAPI(
 app.include_router(driver_router)
 app.include_router(team_router)
 
-templates = Jinja2Templates(directory="app/templates")
-
 # If you have an auth system, define or import it here:
 # from auth import auth_required
 # etc.
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 def read_root(request: Request):
     return {"message": "Welcome to F1 Driver Registry API"}
