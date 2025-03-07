@@ -1,5 +1,5 @@
 import fireo
-import multiprocessing
+import threading
 import uvicorn
 from nicegui import ui
 from fastapi import FastAPI, Request, Response
@@ -40,15 +40,19 @@ def run_nicegui():
     ui.run(title="F1 Registry", host="127.0.0.1", port=8001)
 
 def run_parallel():
-    app_process = multiprocessing.Process(target=run_uvicorn)
-    ui_process = multiprocessing.Process(target=run_nicegui)
+    app_thread = threading.Thread(target=run_uvicorn)
+    app_thread.start()
+    run_nicegui()
+    
+    # app_process = multiprocessing.Process(target=run_uvicorn, daemon=True)
+    # ui_process = multiprocessing.Process(target=run_nicegui, daemon=True)
 
-    app_process.start()
-    ui_process.start()
+    # app_process.start()
+    # ui_process.start()
 
-    app_process.join()
-    ui_process.join()
+    # app_process.join()
+    # ui_process.join()
 
 
-if __name__ == "__main__":
+if __name__ in {"__main__",  "__mp_main__"}:
     run_parallel()
