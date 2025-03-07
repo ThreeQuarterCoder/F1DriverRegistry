@@ -43,15 +43,6 @@ def run_parallel():
     app_thread = threading.Thread(target=run_uvicorn)
     app_thread.start()
     run_nicegui()
-    
-    # app_process = multiprocessing.Process(target=run_uvicorn, daemon=True)
-    # ui_process = multiprocessing.Process(target=run_nicegui, daemon=True)
-
-    # app_process.start()
-    # ui_process.start()
-
-    # app_process.join()
-    # ui_process.join()
 
 
 if __name__ in {"__main__",  "__mp_main__"}:
