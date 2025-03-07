@@ -27,5 +27,5 @@ templates = Jinja2Templates(directory="app/templates")
 # etc.
 
 @app.get("/", response_class=HTMLResponse)
-def read_root():
+def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "message": "Welcome to the F1 Driver Registry Aplication"})
