@@ -1,7 +1,7 @@
 # team_service.py
 
 from typing import List
-from models import Team
+from app.models.team import Team
 
 class TeamService:
     @staticmethod

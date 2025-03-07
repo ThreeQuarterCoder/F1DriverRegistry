@@ -6,7 +6,7 @@ from app.controllers.driver_controller import driver_router
 from app.controllers.team_controller import team_router
 
 # Initialize FireO here OR in models.py
-fireo.connection(from_file="serviceAccount.json")
+fireo.connection(from_file="f1-driver-registry-b91545d3ebfc.json")
 
 app = FastAPI(
     title="F1 Driver Registry",

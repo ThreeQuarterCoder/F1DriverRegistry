@@ -1,7 +1,7 @@
 # driver_service.py
 
 from typing import List
-from models import Driver  # your FireO driver model
+from app.models.driver import Driver  # your FireO driver model
 
 class DriverService:
     @staticmethod

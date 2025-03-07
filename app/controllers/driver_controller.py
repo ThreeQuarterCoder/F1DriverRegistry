@@ -1,7 +1,7 @@
 # driver_controller.py
 from fastapi import APIRouter, HTTPException, Depends, Query
 from typing import Any, List, Optional
-from services.driver_service import DriverService
+from app.services.driver_service import DriverService
 
 driver_router = APIRouter(prefix="/drivers", tags=["drivers"])
 
