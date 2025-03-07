@@ -1,14 +1,9 @@
-<script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js"></script>
-
 <script type="module">
-  // Import the functions you need from the SDKs you need
+  // Import Firebase modules correctly
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
-  // Your web app's Firebase configuration
+  // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyD1f3xPSu8nDWaPO-6r29MrDGo7e_tIfVU",
     authDomain: "f1-driver-registry.firebaseapp.com",
@@ -18,6 +13,50 @@
     appId: "1:425340909294:web:612a49c0471636a2ef65ff"
   };
 
-  // Initialize Firebase
+  // Initialize Firebase App
   const app = initializeApp(firebaseConfig);
+
+  // Initialize Firebase Authentication
+  const auth = getAuth(app);
+
+  // Track login state
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User logged in:", user.email);
+      // Show/hide elements for logged-in state
+    } else {
+      console.log("No user logged in");
+      // Show/hide elements for logged-out state
+    }
+  });
+
+  // Basic sign-in function
+  function signInUser() {
+    const email = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log("Signed in as:", userCredential.user.email);
+      })
+      .catch((error) => {
+        console.error("Sign-in error:", error);
+        alert(error.message);
+      });
+  }
+
+  // Basic sign-out function
+  function signOutUser() {
+    signOut(auth)
+      .then(() => {
+        console.log("User signed out");
+      })
+      .catch((error) => {
+        console.error("Sign-out error:", error);
+      });
+  }
+
+  // Attach functions to global scope for button click events
+  window.signInUser = signInUser;
+  window.signOutUser = signOutUser;
 </script>
