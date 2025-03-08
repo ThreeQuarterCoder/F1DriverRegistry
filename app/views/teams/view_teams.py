@@ -15,7 +15,7 @@ def team_list_page():
     with ui.column().classes("mt-4"):
         for t in teams:
             with ui.row():
-                team_name = d.name
-                team_id = d.id
+                team_name = t.name
+                team_id = t.id
                 page_link = ui.link(text=team_name, target=ui.navigate.to(f"/team/{team_id}"), new_tab=True)
                 
