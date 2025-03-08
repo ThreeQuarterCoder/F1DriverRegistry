@@ -18,11 +18,11 @@ def team_detail_page(team_id: str):
     with ui.column().classes("gap-2 mt-4"):
         ui.label(f"Name: {t.get('name')}")
         ui.label(f"Year Founded: {t.get('year_founded')}")
-        ui.label(f"Total Pole Positions: {d.get('total_pole_positions')}")
-        ui.label(f"Total Race Wins: {d.get('total_race_wins')}")
-        ui.label(f"Total Constructor Titles: {d.get('total_constructor_titles')}")
-        ui.label(f"Finishing Position Previous Season: {d.get('finishing_position_previous_season')}")
-        ui.label(f"Fastest Laps: {d.get('total_fastest_laps')}")
+        ui.label(f"Total Pole Positions: {t.get('total_pole_positions')}")
+        ui.label(f"Total Race Wins: {t.get('total_race_wins')}")
+        ui.label(f"Total Constructor Titles: {t.get('total_constructor_titles')}")
+        ui.label(f"Finishing Position Previous Season: {t.get('finishing_position_previous_season')}")
+        ui.label(f"Fastest Laps: {t.get('total_fastest_laps')}")
         
 
     # If the user is logged in, show "Edit" and "Delete" buttons

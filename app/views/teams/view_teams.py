@@ -7,7 +7,7 @@ def team_list_page():
 
     response = requests.get(f"{API_BASE}/teams")
     if response.status_code == 200:
-        teams = response.json()  # Suppose it returns a list of drivers
+        teams = response.json()  # Suppose it returns a list of teams
     else:
         ui.label(f"Error fetching drivers: {response.text}")
         return
@@ -17,5 +17,5 @@ def team_list_page():
             with ui.row():
                 team_name = t.name
                 team_id = t.id
-                page_link = ui.link(text=team_name, target=ui.navigate.to(f"/team/{team_id}"), new_tab=True)
+                page_link = ui.link(text=team_name, target=ui.navigate.to(f"/team/{team_id}"), new_tab=False)
                 

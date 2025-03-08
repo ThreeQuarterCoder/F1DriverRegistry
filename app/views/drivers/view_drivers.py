@@ -17,5 +17,5 @@ def driver_list_page():
             with ui.row():
                 driver_name = d.name
                 driver_id = d.id
-                page_link = ui.link(text=driver_name, target=ui.navigate.to(f"/driver/{driver_id}"), new_tab=True)
+                page_link = ui.link(text=driver_name, target=ui.navigate.to(f"/driver/{driver_id}"), new_tab=False)
                 
