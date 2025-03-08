@@ -6,6 +6,11 @@ from app.views.teams.view_teams import team_list_page
 from app.views.teams.view_team import team_detail_page
 
 def register_view_routes():
+
+    ui.add_head_html("""
+        <script type="module" src="/static/firebase-login.js"></script>
+        """)
+    ui.label("Welcome to F1 Driver Registry").classes("text-3xl font-bold mt-6")
     """Register View Routes"""
     ui.page("/") (home_page)
     # Drivers

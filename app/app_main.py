@@ -25,5 +25,5 @@ app.include_router(team_router)
 def read_root(request: Request):
     return {"message": "Welcome to F1 Driver Registry API"}
 
-if __name__ == "__main__":
+if __name__ in {"__main__", "__mp_main__"}:
     uvicorn.run(app, host="127.0.0.1", port=8000, log_level="debug")
