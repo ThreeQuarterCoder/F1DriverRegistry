@@ -1,8 +1,16 @@
-from nicegui import ui
+from nicegui import app, ui
+import os
 
 from app.controllers.view_controller import register_view_routes
 
-ui.add_static_files('/static', os.path.join(os.path.dirname(__file__), 'static'))
+
+# Define the path to the 'static' directory
+static_dir = os.path.join(os.path.dirname(__file__), 'static')
+
+# Serve the 'static' directory at the '/static' URL path
+app.add_static_files('/static', static_dir)
+
+#ui.add_static_files('/static', os.path.join(os.path.dirname(__file__), 'static'))
 
 register_view_routes()
 

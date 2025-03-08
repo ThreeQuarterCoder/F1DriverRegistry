@@ -9,7 +9,7 @@ def home_page():
             ui.label("You are currently logged out.").classes("text-gray-500")
             ui.button("Log In", on_click=lambda: ui.run_javascript("showLoginDialog()"))
 
-        with ui.row().props("id=loggedInPanel", style="display:none"):
+        with ui.row().props("id=loggedInPanel style=display:none"):
             ui.label("Logged in as: ").props("id=userEmailLabel")
             ui.button("Log Out", on_click=lambda: ui.run_javascript("signOutUser()"))
 
