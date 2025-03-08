@@ -15,4 +15,37 @@ def home_page():
 
     with ui.row().classes("mt-4"):
         ui.button("View Drivers", on_click=lambda: ui.navigate.to("/drivers")).classes("bg-blue-500 text-white p-2 rounded")
-        ui.button("View Teams", on_click=lambda: ui.navigate.to("/teams")).classes("bg-green-500 text-white p-2 rounded")
+        ui.button("View Teams", on_click=lambda: ui.navigate.to("/teams")).classes("bg-blue-500 text-white p-2 rounded")
+        ui.button("Compare Teams", on_click=lambda: ui.navigate.to("/team/compare")).classes("bg-blue-500 text-white p-2 rounded")
+        ui.button("Compare Drivers", on_click=lambda: ui.navigate.to("/driver/compare")).classes("bg-blue-500 text-white p-2 rounded")
+        ui.button("Query Teams", on_click=lambda: ui.navigate.to("/team/query")).classes("bg-blue-500 text-white p-2 rounded")
+        ui.button("Query Drivers", on_click=lambda: ui.navigate.to("/driver/query")).classes("bg-blue-500 text-white p-2 rounded")
+        # ui.button("Add Driver", on_click=lambda: ui.navigate.to("/driver/add")).classes("bg-blue-500 text-white p-2 rounded")
+        # ui.button("Modify Driver", on_click=lambda: ui.navigate.to("/driver/modify")).classes("bg-blue-500 text-white p-2 rounded")
+        # ui.button("Delete Driver", on_click=lambda: ui.navigate.to("/driver/delete")).classes("bg-blue-500 text-white p-2 rounded")
+        # ui.button("Add Team", on_click=lambda: ui.navigate.to("/team/add")).classes("bg-blue-500 text-white p-2 rounded")
+        # ui.button("Modify Team", on_click=lambda: ui.navigate.to("/team/modify")).classes("bg-blue-500 text-white p-2 rounded")
+        # ui.button("Delete Team", on_click=lambda: ui.navigate.to("/team/delete")).classes("bg-blue-500 text-white p-2 rounded")
+        ui.button("Add Driver", on_click=lambda: ui.navigate.to("/driver/add")) \
+            .props("id=btn_add_driver style=display:none") \
+            .classes("bg-blue-500 text-white p-2 rounded")
+
+        ui.button("Modify Driver", on_click=lambda: ui.navigate.to("/driver/modify")) \
+            .props("id=btn_modify_driver style=display:none") \
+            .classes("bg-blue-500 text-white p-2 rounded")
+
+        ui.button("Delete Driver", on_click=lambda: ui.navigate.to("/driver/delete")) \
+            .props("id=btn_delete_driver style=display:none") \
+            .classes("bg-blue-500 text-white p-2 rounded")
+
+        ui.button("Add Team", on_click=lambda: ui.navigate.to("/team/add")) \
+            .props("id=btn_add_team style=display:none") \
+            .classes("bg-blue-500 text-white p-2 rounded")
+
+        ui.button("Modify Team", on_click=lambda: ui.navigate.to("/team/modify")) \
+            .props("id=btn_modify_team style=display:none") \
+            .classes("bg-blue-500 text-white p-2 rounded")
+
+        ui.button("Delete Team", on_click=lambda: ui.navigate.to("/team/delete")) \
+            .props("id=btn_delete_team style=display:none") \
+            .classes("bg-blue-500 text-white p-2 rounded")
